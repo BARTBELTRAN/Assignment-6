@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function() {
+
 //create textarea
 let textarea = document.createElement("textarea");
 textarea.setAttribute("cols", "50");
@@ -73,3 +75,4 @@ submitButton.addEventListener("click", function(event) {
 });
 
 document.body.appendChild(submitButton);
+});
