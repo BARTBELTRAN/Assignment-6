@@ -1,3 +1,4 @@
+//create textarea
 let textarea = document.createElement("textarea");
 textarea.setAttribute("cols", "50");
 textarea.setAttribute("rows", "5");
@@ -5,10 +6,12 @@ textarea.setAttribute("placeholder", "Hello");
 
 document.body.appendChild(textarea);
 
+//create button
 const submitButton = document.createElement("button");
 submitButton.textContent = "Submit";
 submitButton.type = "submit";
 
+//event listener for button
 submitButton.addEventListener("click", function(event) {
 	const inputText = textarea.value;
   
@@ -16,6 +19,7 @@ submitButton.addEventListener("click", function(event) {
   
   const frequencyTable = {};
   
+  //add frequency rate
   tokens.forEach(token => {
   	if (frequencyTable[token]) {
     	frequencyTable[token]++;
@@ -26,9 +30,16 @@ submitButton.addEventListener("click", function(event) {
   });
   console.log("Frequency Table:", frequencyTable);
   
-  //sort
+  //sort frequency and alpha
   const sortedTable = Object.entries(frequencyTable)
-  .sort((a, b) => b[1] - a[1]);
+  .sort((a, b) => {
+  	if (a[1] !== b[1]) {
+    	return b[1]- a[1];
+    }
+    else {
+    	return a[0].localeCompare(b[0]);
+    }
+   });
   
   //top five words
   const topFive = sortedTable.slice(0, 5);
