@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 let textarea = document.createElement("textarea");
 textarea.setAttribute("cols", "50");
 textarea.setAttribute("rows", "5");
-textarea.setAttribute("placeholder", "Hello");
+textarea.setAttribute("placeholder", "Input text");
 
 document.body.appendChild(textarea);
 
